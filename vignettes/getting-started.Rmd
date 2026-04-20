@@ -1,0 +1,74 @@
+---
+title: "Getting Started with ADS8192"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started with ADS8192}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Introduction
+# ADS8192 provides tools for analyzing RNA-seq data from the fission yeast stress response experiment.
+# The package can:
+# - normalize count data
+# - select top variable genes
+# - scale expression matrices
+# - generate annotated heatmaps
+# - extract gene modules
+# - export results
+
+
+## Quick Example
+```{r}
+library(ADS8192)
+
+data("example_se", package = "ADS8192")
+
+result <- ADS8192::run_heatmap_analysis(
+  se = example_se,
+  n_top = 500,
+  scale_method = "zscore",
+  gene_k = 5,
+  column_split_by = "strain"
+)
+
+names(result)
+dim(result$gene_modules)
+head(result$gene_modules)
+```
+
+## Changing Parameters
+```{r}
+result2 <- run_heatmap_analysis(
+  se = example_se,
+  n_top = 200,
+  scale_method = "minmax",
+  gene_k = 4,
+  column_split_by = "strain"
+)
+
+head(result2$gene_modules)
+```
+
+## Exporting Results
+```{r}
+out_dir <- tempdir()
+
+run_heatmap_analysis(
+  se = example_se,
+  n_top = 100,
+  scale_method = "zscore",
+  gene_k = 3,
+  column_split_by = "strain",
+  output_dir = out_dir
+)
+
+list.files(out_dir, pattern = "\\.tsv$")
+```

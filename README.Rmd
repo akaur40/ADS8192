@@ -66,3 +66,24 @@ result <- run_heatmap_analysis(
 )
 ```
 
+## CLI
+Install the CLI launcher:
+```{r}
+ADS8192::install_ads8192_cli()
+```
+
+CLI help:
+```{bash, eval=FALSE}
+ADS8192 heatmap --help
+```
+
+Fallback development usage:
+```{bash, eval=FALSE}
+Rapp exec/ADS8192.R heatmap --help
+```
+
+Example run:
+```{bash, eval=FALSE}
+ADS8192 heatmap --counts counts.csv --meta meta.csv --output results
+```
+
