@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # ADS8192 Heatmap Package
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/akaur40/ADS8192/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/akaur40/ADS8192/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 This package provides tools for analyzing RNA-seq data from the fission yeast stress response experiment. It includes functions to do the following:
