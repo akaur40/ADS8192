@@ -47,8 +47,8 @@ result <- run_heatmap_analysis(example_se)
 
 #view output
 result$heatmap
-result$scaled_matrix
-head(result$gene_modules)
+head(result$scaled_matrix)
+result$gene_modules
 ```
 
 #Example with parameters
