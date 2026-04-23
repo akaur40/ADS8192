@@ -45,3 +45,18 @@ run_heatmap_analysis(
 
 A list containing the heatmap, scaled matrix, and gene module
 assignments.
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+data("example_se", package = "ADS8192")
+result <- run_heatmap_analysis(
+  se = example_se,
+  n_top = 100,
+  scale_method = "zscore",
+  gene_k = 5,
+  column_split_by = "strain"
+)
+} # }
+```
