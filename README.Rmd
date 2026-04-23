@@ -66,7 +66,9 @@ result <- run_heatmap_analysis(
 )
 ```
 
-## CLI
+## Command Line Interface (CLI)
+
+This package provides a command-line interface for running the analysis
 Install the CLI launcher:
 ```{r}
 ADS8192::install_ads8192_cli()
@@ -84,6 +86,12 @@ Rapp exec/ADS8192.R heatmap --help
 
 Example run:
 ```{bash, eval=FALSE}
-ADS8192 heatmap --counts counts.csv --meta meta.csv --output results
+ADS8192 heatmap \
+  --input example \
+  --n_top 500\
+  --scale_method zscore \
+  --gene_k 5 \
+  --column_split_by strain \
+  --output_dir results/
 ```
 
