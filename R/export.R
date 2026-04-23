@@ -1,3 +1,21 @@
+#' Export heatmap analysis results
+#'
+#' Writes the scaled expression matrix, per-gene module assignments,
+#' and per-module gene lists to tab-separated files in the output directory.
+#'
+#' @param mat_scaled A scaled genes x samples matrix.
+#' @param module_df A data frame containing gene-to-module assignments.
+#' @param output_dir Directory where output files will be written.
+#'
+#' @return Invisible NULL. Files are written to disk.
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' data("example_se", package = "ADS8192")
+#' result <- run_heatmap_analysis(example_se)
+#' export_results(result$scaled_matrix, result$gene_modules, tempdir())
+#' }
 export_results <- function(mat_scaled, module_df, output_dir) {
 
   dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
