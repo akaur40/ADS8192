@@ -12,7 +12,6 @@ URL: https://github.com/akaur40/ADS8192, https://akaur40.github.io/ADS8192/
 BugReports: https://github.com/akaur40/ADS8192/issues
 Imports: 
     ComplexHeatmap,
-    ggplot2,
     grid,
     Rapp,
     SummarizedExperiment
