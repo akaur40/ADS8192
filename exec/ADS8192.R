@@ -39,8 +39,8 @@ switch(
       stop("--counts, --meta, and --output are required", call. = FALSE)
     }
 
-    library(ADS8192)
-    library(SummarizedExperiment)
+    suppressPackageStartupMessages(library(ADS8192))
+    suppressPackageStartupMessages(library(SummarizedExperiment))
 
     read_data_file <- function(path) {
       ext <- tolower(tools::file_ext(path))
