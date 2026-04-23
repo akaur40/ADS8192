@@ -6,7 +6,7 @@ export_results <- function(mat_scaled, module_df, output_dir) {
   scaled_out <- as.data.frame(mat_scaled)
   scaled_out$gene <- rownames(mat_scaled)
 
-  write.table(
+  utils::write.table(
     scaled_out,
     file.path(output_dir, "scaled_expression.tsv"),
     sep = "\t",
@@ -15,7 +15,7 @@ export_results <- function(mat_scaled, module_df, output_dir) {
   )
 
   # gene modules
-  write.table(
+  utils::write.table(
     module_df,
     file.path(output_dir, "gene_modules.tsv"),
     sep = "\t",
@@ -34,7 +34,7 @@ export_results <- function(mat_scaled, module_df, output_dir) {
     )
   }))
 
-  write.table(
+  utils::write.table(
     module_gene_list,
     file.path(output_dir, "module_gene_lists.tsv"),
     sep = "\t",
