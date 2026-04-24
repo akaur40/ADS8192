@@ -6,7 +6,7 @@ per-module gene lists to tab-separated files in the output directory.
 ## Usage
 
 ``` r
-export_results(mat_scaled, module_df, output_dir)
+export_results(mat_scaled, module_df, output_dir, heatmap = NULL)
 ```
 
 ## Arguments
@@ -22,6 +22,10 @@ export_results(mat_scaled, module_df, output_dir)
 - output_dir:
 
   Directory where output files will be written.
+
+- heatmap:
+
+  Optional heatmap object to save as a PDF.
 
 ## Value
 
