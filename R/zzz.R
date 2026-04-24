@@ -1,0 +1,2 @@
+#' @importFrom GenomicRanges GRanges
+NULL

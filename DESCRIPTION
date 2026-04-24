@@ -14,10 +14,10 @@ Imports:
     ComplexHeatmap,
     grid,
     Rapp,
-    SummarizedExperiment
+    SummarizedExperiment,
+    GenomicRanges
 Suggests: 
     knitr,
-    GenomicRanges,
     rmarkdown,
     testthat (>= 3.0.0)
 Depends: 

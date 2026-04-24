@@ -3,3 +3,4 @@
 export(export_results)
 export(install_ads8192_cli)
 export(run_heatmap_analysis)
+importFrom(GenomicRanges,GRanges)
