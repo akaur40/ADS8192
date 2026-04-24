@@ -6,7 +6,6 @@
 #' @param mat_scaled A scaled genes x samples matrix.
 #' @param module_df A data frame containing gene-to-module assignments.
 #' @param output_dir Directory where output files will be written.
-#' @param heatmap Optional heatmap object to save as a PDF.
 #'
 #' @return Invisible NULL. Files are written to disk.
 #' @export
@@ -17,6 +16,8 @@
 #' result <- run_heatmap_analysis(example_se)
 #' export_results(result$scaled_matrix, result$gene_modules, tempdir())
 #' }
+#'
+#' @param heatmap Optional heatmap object to save as a PDF.
 export_results <- function(mat_scaled, module_df, output_dir, heatmap =NULL) {
   if (!dir.exists(output_dir)){
     dir.create(output_dir, recursive = TRUE)

@@ -4,7 +4,7 @@
 \alias{export_results}
 \title{Export heatmap analysis results}
 \usage{
-export_results(mat_scaled, module_df, output_dir)
+export_results(mat_scaled, module_df, output_dir, heatmap = NULL)
 }
 \arguments{
 \item{mat_scaled}{A scaled genes x samples matrix.}
@@ -12,6 +12,8 @@ export_results(mat_scaled, module_df, output_dir)
 \item{module_df}{A data frame containing gene-to-module assignments.}
 
 \item{output_dir}{Directory where output files will be written.}
+
+\item{heatmap}{Optional heatmap object to save as a PDF.}
 }
 \value{
 Invisible NULL. Files are written to disk.
@@ -26,4 +28,5 @@ data("example_se", package = "ADS8192")
 result <- run_heatmap_analysis(example_se)
 export_results(result$scaled_matrix, result$gene_modules, tempdir())
 }
+
 }
