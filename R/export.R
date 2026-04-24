@@ -6,6 +6,7 @@
 #' @param mat_scaled A scaled genes x samples matrix.
 #' @param module_df A data frame containing gene-to-module assignments.
 #' @param output_dir Directory where output files will be written.
+#' @param heatmap Optional heatmap object to save as a PDF.
 #'
 #' @return Invisible NULL. Files are written to disk.
 #' @export
@@ -16,9 +17,11 @@
 #' result <- run_heatmap_analysis(example_se)
 #' export_results(result$scaled_matrix, result$gene_modules, tempdir())
 #' }
-export_results <- function(mat_scaled, module_df, output_dir) {
+export_results <- function(mat_scaled, module_df, output_dir, heatmap =NULL) {
+  if (!dir.exists(output_dir)){
+    dir.create(output_dir, recursive = TRUE)
+  }
 
-  dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
   # scaled expression
   scaled_out <- as.data.frame(mat_scaled)
@@ -59,4 +62,11 @@ export_results <- function(mat_scaled, module_df, output_dir) {
     row.names = FALSE,
     quote = FALSE
   )
+
+if (!is.null(heatmap)) {
+  grDevices::pdf(file.path(output_dir, "heatmap.pdf"))
+  ComplexHeatmap::draw(heatmap)
+  grDevices::dev.off()
+}
+  invisible(NULL)
 }

@@ -48,7 +48,7 @@ run_heatmap_analysis <- function(se,
 
   # Step 6: export results
   if (!is.null(output_dir)) {
-    export_results(mat_scaled, module_df, output_dir)
+    export_results(mat_scaled, module_df, output_dir, heatmap=ht)
   }
 
   # return
